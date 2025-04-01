@@ -21,7 +21,7 @@ app.post("/translate", async (req, res) => {
     const { text, targetLanguage } = req.body;
     
     if (!text || !targetLanguage || targetLanguage == null) {
-        return res.status(400).json({ error: "Missing text or targetLanguage" });
+        return res.json({ translatedText: null });
     }
 
     try {
